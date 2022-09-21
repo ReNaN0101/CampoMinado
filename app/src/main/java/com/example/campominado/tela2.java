@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +21,9 @@ public class tela2 extends AppCompatActivity {
     Button botoes[] = new Button[64];
     Random rnd = new Random();
     int localBomb = rnd.nextInt(64);
-    int c,contador = 1;
+    int click,contador = 1;
+    SoundPool efeito;
+    MediaPlayer musica;
 
     int vetor[] = {R.id.b101 ,R.id.b102,R.id.b103,R.id.b104,R.id.b105,R.id.b106,R.id.b107,R.id.b108,
             R.id.b201,R.id.b202,R.id.b203,R.id.b204,R.id.b205,R.id.b206,R.id.b207,R.id.b208,
@@ -34,6 +39,12 @@ public class tela2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela2);
 
+        efeito = new SoundPool(4, AudioManager.STREAM_MUSIC, 8);
+        click = efeito.load(tela2.this,R.raw.efeito,3);
+
+        musica = MediaPlayer.create(tela2.this,R.raw.champion);
+
+
         for (int i = 0; i < 64;i++)
             botoes[i] = findViewById(vetor[i]);
 
@@ -42,17 +53,19 @@ public class tela2 extends AppCompatActivity {
         }
 
     }
+
     public void ehbomba(int x){
         botoes[x].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (localBomb == x) {
-
+                    musica.start();
                     Intent intent = new Intent(tela2.this, tela3.class);
                     intent.putExtra("tentativas",contador);
                     startActivity(intent);
                     finish();
                 } else {
+                    efeito.play(click,1,1,1,0,1);
                     botoes[x].setBackgroundColor(Color.WHITE);
                     botoes[x].setClickable(false);
                     contador++;

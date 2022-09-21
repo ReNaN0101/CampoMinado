@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6B6C73"
+    tools:context=".tela2"
+    >
+    <TextView
+        android:id="@+id/titulo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Procure a Bomba!"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/titulo"
+        android:textSize="50dp"
+        android:textColor="@color/black"
+        />
+
+    <include
+        layout="@layout/linha1"
+        android:id="@+id/linha1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titulo2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+    <include layout = "@layout/linha2"
+        android:id="@+id/linha2"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linha1"
+        android:layout_marginTop="1dp"/>
+    <include layout = "@layout/linha3"
+        android:id="@+id/linha3"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linha2"
+        android:layout_marginTop="1dp"/>
+    <include layout = "@layout/linha4"
+        android:id="@+id/linha4"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linha3"
+        android:layout_marginTop="1dp"/>
+    <include layout = "@layout/linha5"
+        android:id="@+id/linha5"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linha4"
+        android:layout_marginTop="1dp"/>
+    <include layout = "@layout/linha6"
+        android:id="@+id/linha6"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linha5"
+        android:layout_marginTop="1dp"/>
+    <include layout = "@layout/linha7"
+        android:id="@+id/linha7"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linha6"
+        android:layout_marginTop="1dp"/>
+
+    <include layout="@layout/linha8"
+        android:id="@+id/linha8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linha7"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="1dp" />
+</RelativeLayout>
+
